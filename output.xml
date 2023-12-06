@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231205 17:01:06.115" rpa="false" schemaversion="4">
+<suite id="s1" name="Group 2 Tests" source="/home/magichobo/development/python/odoo/tests/cpsc462_group2/group_2_tests.robot">
+<test id="s1-t1" name="Login User with Password" line="11">
+<kw name="Connect to Server" library="keywords">
+<kw name="Open Connection" library="Odoo_Keyword_Driven_Tests">
+<msg timestamp="20231205 17:01:07.578" level="INFO">Using WebDriver to open Connection.</msg>
+<status status="PASS" starttime="20231205 17:01:06.141" endtime="20231205 17:01:07.578"/>
+</kw>
+<status status="PASS" starttime="20231205 17:01:06.141" endtime="20231205 17:01:07.578"/>
+</kw>
+<kw name="Open Odoo" library="keywords">
+<kw name="Goto Odoo" library="Odoo_Keyword_Driven_Tests">
+<status status="PASS" starttime="20231205 17:01:07.578" endtime="20231205 17:01:07.770"/>
+</kw>
+<status status="PASS" starttime="20231205 17:01:07.578" endtime="20231205 17:01:07.770"/>
+</kw>
+<kw name="Sleep" library="keywords">
+<arg>3.5</arg>
+<kw name="Pause To View" library="Odoo_Keyword_Driven_Tests">
+<arg>${time_to_sleep}</arg>
+<msg timestamp="20231205 17:01:11.273" level="INFO">Stopping the system for: 3.5</msg>
+<status status="PASS" starttime="20231205 17:01:07.770" endtime="20231205 17:01:11.273"/>
+</kw>
+<status status="PASS" starttime="20231205 17:01:07.770" endtime="20231205 17:01:11.273"/>
+</kw>
+<kw name="Disconnect Server" library="keywords">
+<kw name="Cleanup Shutdown" library="Odoo_Keyword_Driven_Tests">
+<msg timestamp="20231205 17:01:11.908" level="INFO">Cleaning Up Odoo..
+Shutting Down webDriver.</msg>
+<status status="PASS" starttime="20231205 17:01:11.273" endtime="20231205 17:01:11.909"/>
+</kw>
+<status status="PASS" starttime="20231205 17:01:11.273" endtime="20231205 17:01:11.909"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" starttime="20231205 17:01:06.141" endtime="20231205 17:01:11.909"/>
+</test>
+<doc>A test suite for Odoo SaaS system
+Keywords are imported from the resource file</doc>
+<status status="PASS" starttime="20231205 17:01:06.116" endtime="20231205 17:01:11.909"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">positive</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Group 2 Tests">Group 2 Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

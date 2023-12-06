@@ -39,3 +39,5 @@ If you run into any issues, refer back to the documentation as well as the sever
 ## Authors
 
 WILL UPDATE LATER
+### _Group 2_:
+*** Joshua Land *** 
