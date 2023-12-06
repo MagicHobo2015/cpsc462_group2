@@ -1,43 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231205 17:01:06.115" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231206 10:48:22.768" rpa="false" schemaversion="4">
 <suite id="s1" name="Group 2 Tests" source="/home/magichobo/development/python/odoo/tests/cpsc462_group2/group_2_tests.robot">
-<test id="s1-t1" name="Login User with Password" line="11">
+<test id="s1-t1" name="Login User with Password" line="19">
 <kw name="Connect to Server" library="keywords">
 <kw name="Open Connection" library="Odoo_Keyword_Driven_Tests">
-<msg timestamp="20231205 17:01:07.578" level="INFO">Using WebDriver to open Connection.</msg>
-<status status="PASS" starttime="20231205 17:01:06.141" endtime="20231205 17:01:07.578"/>
+<msg timestamp="20231206 10:48:24.629" level="INFO">Using WebDriver to open Connection.</msg>
+<status status="PASS" starttime="20231206 10:48:22.795" endtime="20231206 10:48:24.629"/>
 </kw>
-<status status="PASS" starttime="20231205 17:01:06.141" endtime="20231205 17:01:07.578"/>
-</kw>
-<kw name="Open Odoo" library="keywords">
 <kw name="Goto Odoo" library="Odoo_Keyword_Driven_Tests">
-<status status="PASS" starttime="20231205 17:01:07.578" endtime="20231205 17:01:07.770"/>
+<status status="PASS" starttime="20231206 10:48:24.629" endtime="20231206 10:48:24.728"/>
 </kw>
-<status status="PASS" starttime="20231205 17:01:07.578" endtime="20231205 17:01:07.770"/>
+<status status="PASS" starttime="20231206 10:48:22.795" endtime="20231206 10:48:24.728"/>
+</kw>
+<kw name="Fill in Username and Password" library="keywords">
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
+<arg>login</arg>
+<arg>${Username}</arg>
+<status status="PASS" starttime="20231206 10:48:24.729" endtime="20231206 10:48:24.793"/>
+</kw>
+<kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
+<arg>password</arg>
+<arg>${Password}</arg>
+<status status="PASS" starttime="20231206 10:48:24.793" endtime="20231206 10:48:24.799"/>
+</kw>
+<kw name="Click Button" library="Odoo_Keyword_Driven_Tests">
+<arg>Button</arg>
+<status status="PASS" starttime="20231206 10:48:24.799" endtime="20231206 10:48:25.321"/>
+</kw>
+<status status="PASS" starttime="20231206 10:48:24.729" endtime="20231206 10:48:25.321"/>
 </kw>
 <kw name="Sleep" library="keywords">
 <arg>3.5</arg>
 <kw name="Pause To View" library="Odoo_Keyword_Driven_Tests">
 <arg>${time_to_sleep}</arg>
-<msg timestamp="20231205 17:01:11.273" level="INFO">Stopping the system for: 3.5</msg>
-<status status="PASS" starttime="20231205 17:01:07.770" endtime="20231205 17:01:11.273"/>
+<msg timestamp="20231206 10:48:28.825" level="INFO">Stopping the system for: 3.5</msg>
+<status status="PASS" starttime="20231206 10:48:25.321" endtime="20231206 10:48:28.825"/>
 </kw>
-<status status="PASS" starttime="20231205 17:01:07.770" endtime="20231205 17:01:11.273"/>
+<status status="PASS" starttime="20231206 10:48:25.321" endtime="20231206 10:48:28.825"/>
 </kw>
 <kw name="Disconnect Server" library="keywords">
 <kw name="Cleanup Shutdown" library="Odoo_Keyword_Driven_Tests">
-<msg timestamp="20231205 17:01:11.908" level="INFO">Cleaning Up Odoo..
+<msg timestamp="20231206 10:48:29.484" level="INFO">Cleaning Up Odoo..
 Shutting Down webDriver.</msg>
-<status status="PASS" starttime="20231205 17:01:11.273" endtime="20231205 17:01:11.909"/>
+<status status="PASS" starttime="20231206 10:48:28.825" endtime="20231206 10:48:29.484"/>
 </kw>
-<status status="PASS" starttime="20231205 17:01:11.273" endtime="20231205 17:01:11.909"/>
+<status status="PASS" starttime="20231206 10:48:28.825" endtime="20231206 10:48:29.484"/>
 </kw>
 <tag>positive</tag>
-<status status="PASS" starttime="20231205 17:01:06.141" endtime="20231205 17:01:11.909"/>
+<status status="PASS" starttime="20231206 10:48:22.794" endtime="20231206 10:48:29.484"/>
 </test>
 <doc>A test suite for Odoo SaaS system
-Keywords are imported from the resource file</doc>
-<status status="PASS" starttime="20231205 17:01:06.116" endtime="20231205 17:01:11.909"/>
+This is where test cases originate</doc>
+<status status="PASS" starttime="20231206 10:48:22.769" endtime="20231206 10:48:29.485"/>
 </suite>
 <statistics>
 <total>
@@ -51,5 +67,6 @@ Keywords are imported from the resource file</doc>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20231206 10:48:22.767" level="ERROR">Error in file '/home/magichobo/development/python/odoo/tests/cpsc462_group2/group_2_tests.robot' on line 12: Unrecognized section header '*** Notes_To_Me ***'. Valid sections: 'Settings', 'Variables', 'Test Cases', 'Tasks', 'Keywords' and 'Comments'.</msg>
 </errors>
 </robot>

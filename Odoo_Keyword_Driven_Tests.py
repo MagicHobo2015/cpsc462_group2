@@ -62,6 +62,11 @@ class Odoo_Keyword_Driven_Tests:
         if self.debug:
             print(f'Stopping the system for: { time_to_sleep }')
         sleep( time_to_sleep )
+
+    def text_to_field( self, field_name, field_value) -> None:
+        field = self.webdriver.find_element(by='name', value=field_name)
+        field.clear()
+        field.send_keys(field_value)
         
     # TODO: MAKE THIS WORK ********************************************
     def start_odoo(self):
@@ -95,20 +100,12 @@ class Odoo_Keyword_Driven_Tests:
         self.webdriver.get(self.odoo_url)
                 # make sure that worked.
         assert "Odoo" in self.webdriver.title
-    
-    def login_odoo(self):
-        # debug
-        if self.debug:
-            print(f'Begining Login Process..')
 
-        if self.launch_odoo: 
-            print(f'Firing Up Odoo')
-            self.start_odoo()
+    def click_button(self, button_name: str) -> None:
+        button = self.webdriver.find_element(by='tag name', value = button_name)
+        button.click()
 
-        # debug
-        if self.debug:
-            print(f'Filing username/password with\n username: { self.username } \n password: { self.password }')
-        
+
 # This is scratch down here for debuging, not ment to be run by others so may or maynot even work. 
 def main():
     # create our test object.
