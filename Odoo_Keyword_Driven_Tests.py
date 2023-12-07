@@ -9,6 +9,8 @@
 
 # imports
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 from robot.api.logger import info
 import subprocess
 
@@ -25,8 +27,6 @@ class Odoo_Keyword_Driven_Tests:
     ROBOT_LIBRARY_SCOPE = 'SUITE'
 
     def __init__(self) -> None:
-        self.username: str = None
-        self.password: str = None
         self.odoo_port: int = 8069
         self.odoo_url: str = f'http://localhost:{ self.odoo_port }/web'
         self.odoo: subprocess = None
@@ -64,10 +64,34 @@ class Odoo_Keyword_Driven_Tests:
         sleep( time_to_sleep )
 
     def text_to_field( self, field_name, field_value) -> None:
-        field = self.webdriver.find_element(by='name', value=field_name)
+        field = self.webdriver.find_element(By.NAME, value=field_name)
         field.clear()
         field.send_keys(field_value)
-        
+
+    def text_to_id(self, id, text):
+        field = self.webdriver.find_element(By.ID, id)
+        field.clear()
+        field.send_keys(text)
+
+    def back(self) -> None:
+        self.webdriver.back()
+
+    # this works on patient data, I have not tested other fields yet.
+    def get_field(self, field_xpath, should_be):
+        field_to_check = self.webdriver.find_element(By.NAME, field_xpath)
+        return  field_to_check.get_attribute('data-tooltip')
+
+    def check_the_box(self, id):
+        box = self.webdriver.find_element(By.ID, id)
+        box.click()
+
+    def select_dropdown(self, dropdown_id, text_to_select):
+        dropdown = Select(self.webdriver.find_element(By.ID, dropdown_id))
+        dropdown.select_by_visible_text(text_to_select)
+
+    def verify(self, value_one, value_two):
+        assert value_one == value_two
+
     # TODO: MAKE THIS WORK ********************************************
     def start_odoo(self):
         if self.launch_odoo:
@@ -77,6 +101,8 @@ class Odoo_Keyword_Driven_Tests:
 
                 # spawn odoo.
                 self.odoo = subprocess.Popen(args=[self.odoo_bin_location, self.odoo_command], shell=True )
+
+
 
     # all shutdown procs go here.
     def cleanup_shutdown(self) -> None:
@@ -101,10 +127,10 @@ class Odoo_Keyword_Driven_Tests:
                 # make sure that worked.
         assert "Odoo" in self.webdriver.title
 
-    def click_button(self, button_name: str) -> None:
-        button = self.webdriver.find_element(by='tag name', value = button_name)
+    def click_button(self, xpath: str) -> None:
+        button = self.webdriver.find_element(By.XPATH, value = xpath)
         button.click()
-
+    
 
 # This is scratch down here for debuging, not ment to be run by others so may or maynot even work. 
 def main():
@@ -118,10 +144,8 @@ def main():
     sleep( odoo_object.viewtime )
     
     odoo_object.cleanup_shutdown()
-    
-    
-    
-    
+
+
 # some driver code for self/unit testing.
 if __name__ == "__main__":
     main()

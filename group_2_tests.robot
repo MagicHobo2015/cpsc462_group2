@@ -7,11 +7,7 @@ Default Tags    positive
 *** Variables ***
 ${Username}  odoo15
 # bad practice, dont do this.
-${Password}  @test1
-
-*** Notes_To_Me ***
-# this section works as a block comment, mostly for notes.
-# Username and Password Come from User Input
+${Password}     @test1
 
 *** Test Cases ***
 # Since everything starts with loging in, this is an excelent first test.
@@ -19,8 +15,20 @@ ${Password}  @test1
 Login User with Password
     Connect to Server
     Fill in Username and Password    ${Username}    ${Password}
-    Sleep   3.5
     Disconnect Server
 
-# Test Case 2
+# Test Case 2 - 
+Create New Patient
+    Connect to Server
+    Fill in Username and Password       ${Username}     ${Password}
+    Click New Patient button
+    Fill in Patient Info
+    Verify Patient Info
+    Disconnect Server
 
+# Test Case 3 -
+Delete Patient
+    Connect to Server
+    Fill in Username and Password    ${Username}    ${Password}
+    Sleep   2
+    Select Patient
