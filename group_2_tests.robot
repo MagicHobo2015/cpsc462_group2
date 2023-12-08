@@ -26,9 +26,13 @@ Create New Patient
     Verify Patient Info
     Disconnect Server
 
-# Test Case 3 -
+#   Test Case 3 -
 Delete Patient
     Connect to Server
     Fill in Username and Password    ${Username}    ${Password}
     Sleep   2
-    Select Patient
+    Select Patient and Delete
+    Verify Delete
+    Disconnect Server
+
+#   Test Case 4 -

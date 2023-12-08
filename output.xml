@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231207 15:19:56.002" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231208 10:46:28.963" rpa="false" schemaversion="4">
 <suite id="s1" name="Group 2 Tests" source="/home/magichobo/development/python/odoo/tests/cpsc462_group2/group_2_tests.robot">
 <test id="s1-t1" name="Login User with Password" line="15">
 <kw name="Connect to Server" library="keywords">
 <kw name="Open Connection" library="Odoo_Keyword_Driven_Tests">
-<msg timestamp="20231207 15:19:57.260" level="INFO">Using WebDriver to open Connection.</msg>
-<status status="PASS" starttime="20231207 15:19:56.029" endtime="20231207 15:19:57.260"/>
+<msg timestamp="20231208 10:46:30.236" level="INFO">Using WebDriver to open Connection.</msg>
+<status status="PASS" starttime="20231208 10:46:28.991" endtime="20231208 10:46:30.236"/>
 </kw>
 <kw name="Goto Odoo" library="Odoo_Keyword_Driven_Tests">
-<status status="PASS" starttime="20231207 15:19:57.260" endtime="20231207 15:19:57.369"/>
+<status status="PASS" starttime="20231208 10:46:30.236" endtime="20231208 10:46:30.388"/>
 </kw>
-<status status="PASS" starttime="20231207 15:19:56.029" endtime="20231207 15:19:57.369"/>
+<status status="PASS" starttime="20231208 10:46:28.991" endtime="20231208 10:46:30.388"/>
 </kw>
 <kw name="Fill in Username and Password" library="keywords">
 <arg>${Username}</arg>
@@ -18,40 +18,40 @@
 <kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
 <arg>login</arg>
 <arg>${Username}</arg>
-<status status="PASS" starttime="20231207 15:19:57.369" endtime="20231207 15:19:57.393"/>
+<status status="PASS" starttime="20231208 10:46:30.389" endtime="20231208 10:46:30.433"/>
 </kw>
 <kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
 <arg>password</arg>
 <arg>${Password}</arg>
-<status status="PASS" starttime="20231207 15:19:57.393" endtime="20231207 15:19:57.406"/>
+<status status="PASS" starttime="20231208 10:46:30.433" endtime="20231208 10:46:30.466"/>
 </kw>
 <kw name="Click Button" library="Odoo_Keyword_Driven_Tests">
 <arg>/html/body/div[1]/main/div/div/div/form/div[3]/button</arg>
-<status status="PASS" starttime="20231207 15:19:57.406" endtime="20231207 15:19:57.938"/>
+<status status="PASS" starttime="20231208 10:46:30.466" endtime="20231208 10:46:30.987"/>
 </kw>
-<status status="PASS" starttime="20231207 15:19:57.369" endtime="20231207 15:19:57.939"/>
+<status status="PASS" starttime="20231208 10:46:30.388" endtime="20231208 10:46:30.988"/>
 </kw>
 <kw name="Disconnect Server" library="keywords">
 <kw name="Cleanup Shutdown" library="Odoo_Keyword_Driven_Tests">
-<msg timestamp="20231207 15:19:59.492" level="INFO">Cleaning Up Odoo..
+<msg timestamp="20231208 10:46:32.525" level="INFO">Cleaning Up Odoo..
 Shutting Down webDriver.</msg>
-<status status="PASS" starttime="20231207 15:19:57.939" endtime="20231207 15:19:59.492"/>
+<status status="PASS" starttime="20231208 10:46:30.988" endtime="20231208 10:46:32.525"/>
 </kw>
-<status status="PASS" starttime="20231207 15:19:57.939" endtime="20231207 15:19:59.492"/>
+<status status="PASS" starttime="20231208 10:46:30.988" endtime="20231208 10:46:32.525"/>
 </kw>
 <tag>positive</tag>
-<status status="PASS" starttime="20231207 15:19:56.029" endtime="20231207 15:19:59.492"/>
+<status status="PASS" starttime="20231208 10:46:28.991" endtime="20231208 10:46:32.525"/>
 </test>
 <test id="s1-t2" name="Create New Patient" line="21">
 <kw name="Connect to Server" library="keywords">
 <kw name="Open Connection" library="Odoo_Keyword_Driven_Tests">
-<msg timestamp="20231207 15:20:01.125" level="INFO">Using WebDriver to open Connection.</msg>
-<status status="PASS" starttime="20231207 15:19:59.493" endtime="20231207 15:20:01.125"/>
+<msg timestamp="20231208 10:46:34.336" level="INFO">Using WebDriver to open Connection.</msg>
+<status status="PASS" starttime="20231208 10:46:32.526" endtime="20231208 10:46:34.336"/>
 </kw>
 <kw name="Goto Odoo" library="Odoo_Keyword_Driven_Tests">
-<status status="PASS" starttime="20231207 15:20:01.125" endtime="20231207 15:20:01.232"/>
+<status status="PASS" starttime="20231208 10:46:34.336" endtime="20231208 10:46:34.555"/>
 </kw>
-<status status="PASS" starttime="20231207 15:19:59.493" endtime="20231207 15:20:01.232"/>
+<status status="PASS" starttime="20231208 10:46:32.526" endtime="20231208 10:46:34.555"/>
 </kw>
 <kw name="Fill in Username and Password" library="keywords">
 <arg>${Username}</arg>
@@ -59,164 +59,164 @@ Shutting Down webDriver.</msg>
 <kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
 <arg>login</arg>
 <arg>${Username}</arg>
-<status status="PASS" starttime="20231207 15:20:01.233" endtime="20231207 15:20:01.258"/>
+<status status="PASS" starttime="20231208 10:46:34.556" endtime="20231208 10:46:34.585"/>
 </kw>
 <kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
 <arg>password</arg>
 <arg>${Password}</arg>
-<status status="PASS" starttime="20231207 15:20:01.259" endtime="20231207 15:20:01.264"/>
+<status status="PASS" starttime="20231208 10:46:34.586" endtime="20231208 10:46:34.614"/>
 </kw>
 <kw name="Click Button" library="Odoo_Keyword_Driven_Tests">
 <arg>/html/body/div[1]/main/div/div/div/form/div[3]/button</arg>
-<status status="PASS" starttime="20231207 15:20:01.264" endtime="20231207 15:20:01.833"/>
+<status status="PASS" starttime="20231208 10:46:34.614" endtime="20231208 10:46:35.121"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:01.232" endtime="20231207 15:20:01.833"/>
+<status status="PASS" starttime="20231208 10:46:34.555" endtime="20231208 10:46:35.121"/>
 </kw>
 <kw name="Click New Patient Button" library="keywords">
 <kw name="Sleep" library="BuiltIn">
 <arg>1.5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231207 15:20:03.334" level="INFO">Slept 1 second 500 milliseconds</msg>
-<status status="PASS" starttime="20231207 15:20:01.833" endtime="20231207 15:20:03.334"/>
+<msg timestamp="20231208 10:46:36.621" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20231208 10:46:35.121" endtime="20231208 10:46:36.621"/>
 </kw>
 <kw name="Click Button" library="Odoo_Keyword_Driven_Tests">
 <arg>/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div/button</arg>
-<status status="PASS" starttime="20231207 15:20:03.334" endtime="20231207 15:20:03.564"/>
+<status status="PASS" starttime="20231208 10:46:36.621" endtime="20231208 10:46:36.838"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:01.833" endtime="20231207 15:20:03.564"/>
+<status status="PASS" starttime="20231208 10:46:35.121" endtime="20231208 10:46:36.838"/>
 </kw>
 <kw name="Fill in Patient Info" library="keywords">
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231207 15:20:05.565" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231207 15:20:03.565" endtime="20231207 15:20:05.565"/>
+<msg timestamp="20231208 10:46:38.839" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231208 10:46:36.839" endtime="20231208 10:46:38.839"/>
 </kw>
 <kw name="Fill in Name" library="keywords">
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>first_name</arg>
 <arg>${first_name}</arg>
-<status status="PASS" starttime="20231207 15:20:05.565" endtime="20231207 15:20:05.578"/>
+<status status="PASS" starttime="20231208 10:46:38.840" endtime="20231208 10:46:38.852"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>middle_name</arg>
 <arg>${middle_name}</arg>
-<status status="PASS" starttime="20231207 15:20:05.578" endtime="20231207 15:20:05.595"/>
+<status status="PASS" starttime="20231208 10:46:38.852" endtime="20231208 10:46:38.868"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>last_name</arg>
 <arg>${last_name}</arg>
-<status status="PASS" starttime="20231207 15:20:05.595" endtime="20231207 15:20:05.610"/>
+<status status="PASS" starttime="20231208 10:46:38.868" endtime="20231208 10:46:38.883"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:05.565" endtime="20231207 15:20:05.610"/>
+<status status="PASS" starttime="20231208 10:46:38.839" endtime="20231208 10:46:38.883"/>
 </kw>
 <kw name="Fill in Basic Info" library="keywords">
 <kw name="Select Dropdown" library="Odoo_Keyword_Driven_Tests">
 <arg>gender</arg>
 <arg>${gender}</arg>
-<status status="PASS" starttime="20231207 15:20:05.610" endtime="20231207 15:20:05.841"/>
+<status status="PASS" starttime="20231208 10:46:38.884" endtime="20231208 10:46:39.115"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>phone</arg>
 <arg>${phone_number}</arg>
-<status status="PASS" starttime="20231207 15:20:05.841" endtime="20231207 15:20:05.854"/>
+<status status="PASS" starttime="20231208 10:46:39.115" endtime="20231208 10:46:39.129"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>date_of_birth</arg>
 <arg>${birthday}</arg>
-<status status="PASS" starttime="20231207 15:20:05.854" endtime="20231207 15:20:05.872"/>
+<status status="PASS" starttime="20231208 10:46:39.129" endtime="20231208 10:46:39.148"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>email</arg>
 <arg>${email}</arg>
-<status status="PASS" starttime="20231207 15:20:05.872" endtime="20231207 15:20:05.887"/>
+<status status="PASS" starttime="20231208 10:46:39.148" endtime="20231208 10:46:39.165"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:05.610" endtime="20231207 15:20:05.887"/>
+<status status="PASS" starttime="20231208 10:46:38.883" endtime="20231208 10:46:39.165"/>
 </kw>
 <kw name="Fill in Address Info" library="keywords">
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>address</arg>
 <arg>${address}</arg>
-<status status="PASS" starttime="20231207 15:20:05.887" endtime="20231207 15:20:05.912"/>
+<status status="PASS" starttime="20231208 10:46:39.166" endtime="20231208 10:46:39.189"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>city</arg>
 <arg>${city}</arg>
-<status status="PASS" starttime="20231207 15:20:05.912" endtime="20231207 15:20:05.926"/>
+<status status="PASS" starttime="20231208 10:46:39.189" endtime="20231208 10:46:39.198"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>pin_code</arg>
 <arg>${pin_code}</arg>
-<status status="PASS" starttime="20231207 15:20:05.926" endtime="20231207 15:20:05.934"/>
+<status status="PASS" starttime="20231208 10:46:39.199" endtime="20231208 10:46:39.210"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:05.887" endtime="20231207 15:20:05.934"/>
+<status status="PASS" starttime="20231208 10:46:39.165" endtime="20231208 10:46:39.210"/>
 </kw>
 <kw name="Fill in Other Info" library="keywords">
 <kw name="Select Dropdown" library="Odoo_Keyword_Driven_Tests">
 <arg>marital_status</arg>
 <arg>${marital_status}</arg>
-<status status="PASS" starttime="20231207 15:20:05.935" endtime="20231207 15:20:06.149"/>
+<status status="PASS" starttime="20231208 10:46:39.210" endtime="20231208 10:46:39.426"/>
 </kw>
 <kw name="Text To Id" library="Odoo_Keyword_Driven_Tests">
 <arg>partner_name</arg>
 <arg>${partner_name}</arg>
-<status status="PASS" starttime="20231207 15:20:06.150" endtime="20231207 15:20:06.160"/>
+<status status="PASS" starttime="20231208 10:46:39.426" endtime="20231208 10:46:39.436"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:05.934" endtime="20231207 15:20:06.161"/>
+<status status="PASS" starttime="20231208 10:46:39.210" endtime="20231208 10:46:39.436"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231207 15:20:07.161" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20231207 15:20:06.161" endtime="20231207 15:20:07.161"/>
+<msg timestamp="20231208 10:46:40.437" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231208 10:46:39.437" endtime="20231208 10:46:40.437"/>
 </kw>
 <kw name="Back" library="Odoo_Keyword_Driven_Tests">
-<status status="PASS" starttime="20231207 15:20:07.161" endtime="20231207 15:20:07.167"/>
+<status status="PASS" starttime="20231208 10:46:40.437" endtime="20231208 10:46:40.442"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:03.564" endtime="20231207 15:20:07.167"/>
+<status status="PASS" starttime="20231208 10:46:36.839" endtime="20231208 10:46:40.442"/>
 </kw>
 <kw name="Verify Patient Info" library="keywords">
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231207 15:20:08.167" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20231207 15:20:07.167" endtime="20231207 15:20:08.168"/>
+<msg timestamp="20231208 10:46:41.443" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231208 10:46:40.443" endtime="20231208 10:46:41.443"/>
 </kw>
 <kw name="Get Field" library="Odoo_Keyword_Driven_Tests">
 <var>${name_return}</var>
 <arg>name</arg>
-<arg>Jenny krueger</arg>
-<msg timestamp="20231207 15:20:08.176" level="INFO">${name_return} = Jenny krueger</msg>
-<status status="PASS" starttime="20231207 15:20:08.168" endtime="20231207 15:20:08.176"/>
+<arg>${cat_name}</arg>
+<msg timestamp="20231208 10:46:41.451" level="INFO">${name_return} = Jenny Krueger</msg>
+<status status="PASS" starttime="20231208 10:46:41.443" endtime="20231208 10:46:41.451"/>
 </kw>
 <kw name="Verify" library="Odoo_Keyword_Driven_Tests">
 <arg>${name_return}</arg>
-<arg>Jenny krueger</arg>
-<status status="PASS" starttime="20231207 15:20:08.176" endtime="20231207 15:20:08.176"/>
+<arg>${cat_name}</arg>
+<status status="PASS" starttime="20231208 10:46:41.451" endtime="20231208 10:46:41.451"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:07.167" endtime="20231207 15:20:08.176"/>
+<status status="PASS" starttime="20231208 10:46:40.442" endtime="20231208 10:46:41.451"/>
 </kw>
 <kw name="Disconnect Server" library="keywords">
 <kw name="Cleanup Shutdown" library="Odoo_Keyword_Driven_Tests">
-<msg timestamp="20231207 15:20:08.763" level="INFO">Cleaning Up Odoo..
+<msg timestamp="20231208 10:46:42.003" level="INFO">Cleaning Up Odoo..
 Shutting Down webDriver.</msg>
-<status status="PASS" starttime="20231207 15:20:08.177" endtime="20231207 15:20:08.763"/>
+<status status="PASS" starttime="20231208 10:46:41.451" endtime="20231208 10:46:42.004"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:08.176" endtime="20231207 15:20:08.763"/>
+<status status="PASS" starttime="20231208 10:46:41.451" endtime="20231208 10:46:42.004"/>
 </kw>
 <tag>positive</tag>
-<status status="PASS" starttime="20231207 15:19:59.492" endtime="20231207 15:20:08.763"/>
+<status status="PASS" starttime="20231208 10:46:32.526" endtime="20231208 10:46:42.004"/>
 </test>
 <test id="s1-t3" name="Delete Patient" line="30">
 <kw name="Connect to Server" library="keywords">
 <kw name="Open Connection" library="Odoo_Keyword_Driven_Tests">
-<msg timestamp="20231207 15:20:10.378" level="INFO">Using WebDriver to open Connection.</msg>
-<status status="PASS" starttime="20231207 15:20:08.764" endtime="20231207 15:20:10.378"/>
+<msg timestamp="20231208 10:46:43.851" level="INFO">Using WebDriver to open Connection.</msg>
+<status status="PASS" starttime="20231208 10:46:42.004" endtime="20231208 10:46:43.851"/>
 </kw>
 <kw name="Goto Odoo" library="Odoo_Keyword_Driven_Tests">
-<status status="PASS" starttime="20231207 15:20:10.378" endtime="20231207 15:20:10.491"/>
+<status status="PASS" starttime="20231208 10:46:43.851" endtime="20231208 10:46:44.039"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:08.764" endtime="20231207 15:20:10.491"/>
+<status status="PASS" starttime="20231208 10:46:42.004" endtime="20231208 10:46:44.039"/>
 </kw>
 <kw name="Fill in Username and Password" library="keywords">
 <arg>${Username}</arg>
@@ -224,61 +224,64 @@ Shutting Down webDriver.</msg>
 <kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
 <arg>login</arg>
 <arg>${Username}</arg>
-<status status="PASS" starttime="20231207 15:20:10.492" endtime="20231207 15:20:10.517"/>
+<status status="PASS" starttime="20231208 10:46:44.039" endtime="20231208 10:46:44.118"/>
 </kw>
 <kw name="Text To Field" library="Odoo_Keyword_Driven_Tests">
 <arg>password</arg>
 <arg>${Password}</arg>
-<status status="PASS" starttime="20231207 15:20:10.517" endtime="20231207 15:20:10.522"/>
+<status status="PASS" starttime="20231208 10:46:44.118" endtime="20231208 10:46:44.125"/>
 </kw>
 <kw name="Click Button" library="Odoo_Keyword_Driven_Tests">
 <arg>/html/body/div[1]/main/div/div/div/form/div[3]/button</arg>
-<status status="PASS" starttime="20231207 15:20:10.522" endtime="20231207 15:20:11.067"/>
+<status status="PASS" starttime="20231208 10:46:44.125" endtime="20231208 10:46:44.637"/>
 </kw>
-<status status="PASS" starttime="20231207 15:20:10.491" endtime="20231207 15:20:11.067"/>
+<status status="PASS" starttime="20231208 10:46:44.039" endtime="20231208 10:46:44.637"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231207 15:20:13.067" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231207 15:20:11.067" endtime="20231207 15:20:13.067"/>
+<msg timestamp="20231208 10:46:46.638" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231208 10:46:44.637" endtime="20231208 10:46:46.638"/>
 </kw>
-<kw name="Select Patient" library="keywords">
+<kw name="Select Patient and Delete" library="keywords">
 <kw name="Check The Box" library="Odoo_Keyword_Driven_Tests">
-<arg>checkbox</arg>
-<msg timestamp="20231207 15:20:13.070" level="FAIL">NoSuchElementException: Message: Unable to locate element: [id="checkbox"]; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:189:5
-NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:507:5
-dom.find/&lt;/&lt;@chrome://remote/content/shared/DOM.sys.mjs:132:16
-</msg>
-<status status="FAIL" starttime="20231207 15:20:13.068" endtime="20231207 15:20:13.071"/>
+<arg>checkbox-comp-2</arg>
+<status status="PASS" starttime="20231208 10:46:46.638" endtime="20231208 10:46:46.857"/>
 </kw>
-<status status="FAIL" starttime="20231207 15:20:13.068" endtime="20231207 15:20:13.071"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231208 10:46:47.858" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231208 10:46:46.857" endtime="20231208 10:46:47.858"/>
+</kw>
+<kw name="Click Action Then Delete" library="Odoo_Keyword_Driven_Tests">
+<status status="PASS" starttime="20231208 10:46:47.858" endtime="20231208 10:46:50.293"/>
+</kw>
+<status status="PASS" starttime="20231208 10:46:46.638" endtime="20231208 10:46:50.293"/>
+</kw>
+<kw name="Verify Delete" library="keywords">
+<kw name="Not On Page" library="Odoo_Keyword_Driven_Tests">
+<arg>${cat_name}</arg>
+<status status="PASS" starttime="20231208 10:46:50.294" endtime="20231208 10:46:50.295"/>
+</kw>
+<status status="PASS" starttime="20231208 10:46:50.294" endtime="20231208 10:46:50.295"/>
 </kw>
 <tag>positive</tag>
-<status status="FAIL" starttime="20231207 15:20:08.763" endtime="20231207 15:20:13.071">NoSuchElementException: Message: Unable to locate element: [id="checkbox"]; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:189:5
-NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:507:5
-dom.find/&lt;/&lt;@chrome://remote/content/shared/DOM.sys.mjs:132:16
-</status>
+<status status="PASS" starttime="20231208 10:46:42.004" endtime="20231208 10:46:50.295"/>
 </test>
 <doc>A test suite for Odoo SaaS system
 This is where test cases originate</doc>
-<status status="FAIL" starttime="20231207 15:19:56.003" endtime="20231207 15:20:13.071"/>
+<status status="PASS" starttime="20231208 10:46:28.964" endtime="20231208 10:46:50.296"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="1" skip="0">positive</stat>
+<stat pass="3" fail="0" skip="0">positive</stat>
 </tag>
 <suite>
-<stat pass="2" fail="1" skip="0" id="s1" name="Group 2 Tests">Group 2 Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Group 2 Tests">Group 2 Tests</stat>
 </suite>
 </statistics>
 <errors>

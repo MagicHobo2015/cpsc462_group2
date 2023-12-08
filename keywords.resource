@@ -9,7 +9,8 @@ Library           Odoo_Keyword_Driven_Tests.py
 # Name
 ${first_name}          Jenny
 ${middle_name}         franklyn
-${Last_name}           krueger
+${Last_name}           Krueger
+${cat_name}             Jenny Krueger 
 
 # basic Info
 ${gender}              Female
@@ -58,8 +59,8 @@ Fill in Patient Info
 
 Verify Patient Info
     Sleep   1
-    ${name_return}=      Get Field         name               Jenny krueger
-    Verify  ${name_return}  Jenny krueger
+    ${name_return}=      Get Field         name               ${cat_name}
+    Verify              ${name_return}                        ${cat_name}
 
 Fill in Name
     Text to Id          first_name          ${first_name}
@@ -82,5 +83,10 @@ Fill in Other Info
     # only needed when mairtal_status == married
     Text to Id          partner_name        ${partner_name}
 
-Select Patient
-    Check the Box   checkbox
+Select Patient and Delete
+    Check the Box   checkbox-comp-2
+    Sleep   1
+    Click Action then Delete
+
+Verify Delete
+    Not on Page     ${cat_name}

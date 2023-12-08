@@ -8,13 +8,14 @@
 #  *****************************************************************************
 
 # imports
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-from robot.api.logger import info
 import subprocess
-
 from time import sleep
+from selenium import webdriver
+from robot.api.logger import info
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
+from selenium.common.exceptions import NoSuchElementException
 
 
 class Odoo_Keyword_Driven_Tests:
@@ -85,6 +86,29 @@ class Odoo_Keyword_Driven_Tests:
         box = self.webdriver.find_element(By.ID, id)
         box.click()
 
+    #   Checks the page source for the element by xpath
+    def not_on_page(self, thing_to_check):
+        try:
+            self.webdriver.find_element(By.XPATH, '//*[contains(text(), thing_to_check)]')
+            return False
+        except NoSuchElementException:
+            return True
+
+    #   This will click action and delete so patients to be deleted should already be
+    #       Selected.
+    def click_action_then_delete(self):
+        # get the action button.
+        button = self.webdriver.find_element(By.XPATH, '//button[@data-hotkey="u"]')
+        button.click()
+        sleep(1)
+        self.click_button("//span[contains(text(), 'Delete')]")
+        # wait for confirmation popup.
+        sleep(1)
+        # Confirm.
+        modal = self.webdriver.find_element(By.XPATH, '//button[contains(text(), "Ok")]')
+        modal.send_keys(Keys.RETURN)
+
+
     def select_dropdown(self, dropdown_id, text_to_select):
         dropdown = Select(self.webdriver.find_element(By.ID, dropdown_id))
         dropdown.select_by_visible_text(text_to_select)
@@ -134,16 +158,27 @@ class Odoo_Keyword_Driven_Tests:
 
 # This is scratch down here for debuging, not ment to be run by others so may or maynot even work. 
 def main():
-    # create our test object.
-    odoo_object = Odoo_Keyword_Driven_Tests()
+    # create our class.
+    selenium_test = Odoo_Keyword_Driven_Tests()
+
+    # check selenium
+    selenium_test.open_connection()
+    # keep selenium open for 2 seconds
+    selenium_test.pause_to_view(2)
+    # close selenium
+    selenium_test.cleanup_shutdown()
+
+
+    # # create our test object.
+    # odoo_object = Odoo_Keyword_Driven_Tests()
     
-    # work in progress, allow this script to manage odoo.
-    odoo_object.start_odoo()
+    # # work in progress, allow this script to manage odoo.
+    # odoo_object.start_odoo()
     
-    odoo_object.login_odoo()
-    sleep( odoo_object.viewtime )
+    # odoo_object.login_odoo()
+    # sleep( odoo_object.viewtime )
     
-    odoo_object.cleanup_shutdown()
+    # odoo_object.cleanup_shutdown()
 
 
 # some driver code for self/unit testing.
