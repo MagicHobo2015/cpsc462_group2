@@ -27,11 +27,17 @@ ${pin_code}            1234
 ${marital_status}      Married
 ${partner_name}        Freddy
 
+# bad password error
+${password_error}      Wrong login/password
+
+${duplicate_error}      The operation cannot be completed
+
 
 *** Keywords ***
 
 Connect to Server
     Open Connection
+    Sleep  .5
     Goto Odoo
 
 Disconnect Server
@@ -89,4 +95,11 @@ Select Patient and Delete
     Click Action then Delete
 
 Verify Delete
+    # just check for the name if its there throws an error.
     Not on Page     ${cat_name}
+
+Check for Password Error
+    Look for Error      ${password_error}
+
+Check for Error
+    Look for Error      ${duplicate_error}

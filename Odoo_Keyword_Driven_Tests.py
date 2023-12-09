@@ -94,6 +94,12 @@ class Odoo_Keyword_Driven_Tests:
         except NoSuchElementException:
             return True
 
+    def look_for_error(self, error_to_look_for):
+        if self.not_on_page(error_to_look_for):
+            return False
+        else:
+            return True
+
     #   This will click action and delete so patients to be deleted should already be
     #       Selected.
     def click_action_then_delete(self):
@@ -139,13 +145,13 @@ class Odoo_Keyword_Driven_Tests:
 
         # shutdown Selenium
         self.webdriver.close()
-    
+
     def open_connection(self):
         if self.debug:
             print(f'Using WebDriver to open Connection.')
         # Choose your Driver Here.
         self.webdriver = webdriver.Firefox() # webdriver.Chorme()
-    
+
     def goto_odoo(self):
         self.webdriver.get(self.odoo_url)
                 # make sure that worked.
@@ -167,18 +173,6 @@ def main():
     selenium_test.pause_to_view(2)
     # close selenium
     selenium_test.cleanup_shutdown()
-
-
-    # # create our test object.
-    # odoo_object = Odoo_Keyword_Driven_Tests()
-    
-    # # work in progress, allow this script to manage odoo.
-    # odoo_object.start_odoo()
-    
-    # odoo_object.login_odoo()
-    # sleep( odoo_object.viewtime )
-    
-    # odoo_object.cleanup_shutdown()
 
 
 # some driver code for self/unit testing.
