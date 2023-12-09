@@ -28,63 +28,42 @@ class Odoo_Keyword_Driven_Tests:
     ROBOT_LIBRARY_SCOPE = 'SUITE'
 
     def __init__(self) -> None:
-        self.odoo_port: int = 8069
-        self.odoo_url: str = f'http://localhost:{ self.odoo_port }/web'
-        self.odoo: subprocess = None
-        
-# ************************** YOU MAY NEED TO CHANGE THESE TO MATCH YOUR CONFIG.
-        # change these as neede for your system.
-        self.odoo_command = 'odoo-bin --addons-path=addons -d mydb'
-        self.odoo_bin_location = '/home/magichobo/development/python/odoo/'
-        
-        # Turn on extra console output helpful for debugging.
-        self.debug = True
-        self.launch_odoo = False # turn this off to just run odoo yourself
-        self.viewtime = 3.5
-
-# ***************** END STUFF YOU MAY NEED TO CHANGE **************************
-
-    def set_username(self, username: str) -> None:
-        self.username = username
-        # for development.
-        if self.debug:
-            print(f'Username has now been set as { self.password }')
+        # set it, but dont call it. because once you call it browser launches
+################################################# EDIT THIS TO MATCH YOURE DRIVER
+        self.user_defined_webdriver = webdriver.Firefox
 
 
-    def set_password(self, password: str) -> None:
-        self.password = password
-        
-        # for development.
-        if self.debug:
-            print(f'Password has now been set as { self.password }')
-
-    # only so many names for it.
+    # This is Sleep all through the robot code.
     def pause_to_view(self, time_to_sleep: float) -> None:
-        if self.debug:
-            print(f'Stopping the system for: { time_to_sleep }')
         sleep( time_to_sleep )
+
 
     def text_to_field( self, field_name, field_value) -> None:
         field = self.webdriver.find_element(By.NAME, value=field_name)
         field.clear()
         field.send_keys(field_value)
 
+
     def text_to_id(self, id, text):
         field = self.webdriver.find_element(By.ID, id)
         field.clear()
         field.send_keys(text)
 
+
     def back(self) -> None:
         self.webdriver.back()
+
 
     # this works on patient data, I have not tested other fields yet.
     def get_field(self, field_xpath, should_be):
         field_to_check = self.webdriver.find_element(By.NAME, field_xpath)
         return  field_to_check.get_attribute('data-tooltip')
 
+
     def check_the_box(self, id):
         box = self.webdriver.find_element(By.ID, id)
         box.click()
+
 
     #   Checks the page source for the element by xpath
     def not_on_page(self, thing_to_check):
@@ -94,11 +73,13 @@ class Odoo_Keyword_Driven_Tests:
         except NoSuchElementException:
             return True
 
+
     def look_for_error(self, error_to_look_for):
         if self.not_on_page(error_to_look_for):
             return False
         else:
             return True
+
 
     #   This will click action and delete so patients to be deleted should already be
     #       Selected.
@@ -119,62 +100,28 @@ class Odoo_Keyword_Driven_Tests:
         dropdown = Select(self.webdriver.find_element(By.ID, dropdown_id))
         dropdown.select_by_visible_text(text_to_select)
 
+
     def verify(self, value_one, value_two):
         assert value_one == value_two
 
-    # TODO: MAKE THIS WORK ********************************************
-    def start_odoo(self):
-        if self.launch_odoo:
-            if self.debug:
-                print(f'Starting Up odoo..')
-                print(f'Using the command: \n { self.odoo_bin_location + self.odoo_command }')
-
-                # spawn odoo.
-                self.odoo = subprocess.Popen(args=[self.odoo_bin_location, self.odoo_command], shell=True )
-
-
-
-    # all shutdown procs go here.
-    def cleanup_shutdown(self) -> None:
-        if self.debug:
-            print(f'Cleaning Up Odoo..')
-            print(f'Shutting Down webDriver.')
-        # kill the subprocess if this is managing odoo for you.
-        if self.launch_odoo:
-            self.odoo.kill()
 
         # shutdown Selenium
+    def cleanup_shutdown(self) -> None:
         self.webdriver.close()
 
-    def open_connection(self):
-        if self.debug:
-            print(f'Using WebDriver to open Connection.')
-        # Choose your Driver Here.
-        self.webdriver = webdriver.Firefox() # webdriver.Chorme()
 
+    # Opens the browser.
+    def open_connection(self):
+        self.webdriver = self.user_defined_webdriver()
+
+
+    # Requires the browser open, just goes to odoo
     def goto_odoo(self):
+        # open the page, then check it opened
         self.webdriver.get(self.odoo_url)
-                # make sure that worked.
         assert "Odoo" in self.webdriver.title
+
 
     def click_button(self, xpath: str) -> None:
         button = self.webdriver.find_element(By.XPATH, value = xpath)
         button.click()
-    
-
-# This is scratch down here for debuging, not ment to be run by others so may or maynot even work. 
-def main():
-    # create our class.
-    selenium_test = Odoo_Keyword_Driven_Tests()
-
-    # check selenium
-    selenium_test.open_connection()
-    # keep selenium open for 2 seconds
-    selenium_test.pause_to_view(2)
-    # close selenium
-    selenium_test.cleanup_shutdown()
-
-
-# some driver code for self/unit testing.
-if __name__ == "__main__":
-    main()
